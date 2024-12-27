@@ -1,0 +1,4 @@
+- 使用的数据集为plant village数据集
+- 项目中的数据集路径为data/PlantVillage
+- 将plant village数据集解压后放在data/PlantVillage目录下
+- 可以删除不需要的内容，我在实验中只保留了Tomato数据集
