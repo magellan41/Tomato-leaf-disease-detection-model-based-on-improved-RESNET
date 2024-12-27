@@ -53,16 +53,12 @@ def train_model(model,model_name, train_loader, optimizer, criterion, device, ep
 
 
 if __name__ == '__main__':
-    model_name_list = [# 'AlexNet',
-                       # 'AlexNetModified',
-                       # 'ResNet',
-                       # 'ResNet_pretrained',
-                       'ResNet_CBAM_SGD',
-                       'ResNet_SELayer_SGD']
-    model_list = [# AlexNet(),
-                  # AlexNetModified(),
-                  # models.resnet34(weights=ResNet34_Weights.DEFAULT),
-                  # models.resnet34(weights=ResNet34_Weights.IMAGENET1K_V1),
+    model_name_list = ['ResNet',
+                       'ResNet_pretrained',
+                       'ResNet_CBAM',
+                       'ResNet_SELayer']
+    model_list = [models.resnet34(weights=ResNet34_Weights.DEFAULT),
+                  models.resnet34(weights=ResNet34_Weights.IMAGENET1K_V1),
                   ResNetWithCBAM(models.resnet34(weights=ResNet34_Weights.IMAGENET1K_V1)),
                   ResNetWithSE(models.resnet34(weights=ResNet34_Weights.IMAGENET1K_V1))]
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
